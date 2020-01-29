@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+<h3>@ViewBag.Message</h3>
+<form
+
+      method="post">
+    <textarea></textarea>
+    <input type="submit" value="Send" />
+
+</form>
+
+@{ 
+    var amounts = new List<decimal> {25,67,-48,9 };
+
+}
+<ul>
+
+
+    @foreach (decimal ammount in amounts)
+    {
+        <li>@formatammount(ammount)</li>
+       // <li>@"${ammount}"</li>
+        @:plain text
+    }
+
+</ul>
+@helper formatammount(decimal  ammount)
+    {  
+var Color = "green"; 
+if
+    (ammount<0)
+{
+    Color = "red";
+}
+
+<span? style="color:@Color">@String.Format($"{ammount}")</span?>
+
+    }
